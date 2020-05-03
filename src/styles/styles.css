@@ -1,0 +1,11 @@
+/* @import "~normalize.css"; */
+	
+@import "../../node_modules/normalize.css/normalize.css";
+
+.container {
+	color: blue;
+	background-image: url('../assets/rew.jpg');
+	background-size: cover;
+	width: 300px;
+	height: 300px;
+}
