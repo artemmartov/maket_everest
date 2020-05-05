@@ -1,5 +1,227 @@
-@import 'vars';
+@import "vars";
+@import "mixins";
 
-h1 {
-	border: @border;
+// h1 {
+// 	border: @border;
+// }
+
+.container {
+  max-width: 1230px;
+  padding: 0 15px;
+  margin: 0 auto;
 }
+.container-new {
+  max-width: 1230px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.header {
+  background-image: url("../assets/everest.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 650px;
+  background-position: center;
+  padding-top: 47px;
+  padding-bottom: 299px;
+
+  &__up {
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 205px;
+    }
+
+    &-left {
+      display: flex;
+      align-items: center;
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-phone {
+    padding-left: 20px;
+    .robotoFont(@lh: 19px, @color: #fcfcfc, @fw: normal, @fz: 16px);
+  }
+
+  &-items {
+    display: flex;
+    list-style: none;
+  }
+
+  &-logo {
+    margin-right: 99px;
+    .oswaldFont(@lh: 36px, @color: #fcfcfc, @fw: 600, @fz: 24px);
+  }
+
+  &-item {
+    padding-right: 30px;
+    .robotoFont(@lh: 19px, @color: #fcfcfc, @fw: normal, @fz: 16px);
+  }
+
+  &__search-icon {
+    .icon(@adress: url("../assets/searchIcon.png"));
+    margin-left: 43px;
+  }
+
+  &__login-icon {
+    .icon(@adress: url("../assets/loginIcon.png"));
+    margin-left: 30px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__center-wrapper {
+    text-align: center;
+  }
+
+  &__title {
+    .oswaldFont(@lh: 145px, @color: #fcfcfc, @fw: 600, @fz: 98px);
+  }
+
+  &__link {
+    .robotoFont(@lh: 19px, @color: #fcfcfc, @fw: 500, @fz: 16px);
+    text-decoration: none;
+    padding: 16px 43px 18px;
+    border: 2px solid #fcfcfc;
+  }
+}
+
+.travell-map {
+  padding-top: 140px;
+
+  &__wrapper {
+    display: flex;
+    width: 1285px;
+    height: 509px;
+    align-items: center;
+    margin-bottom: 140px;
+    // &-all {
+
+    // }
+  }
+
+  &-img-item {
+    max-width: 815px;
+    height: 375px;
+    // margin-top: 83px;
+  }
+
+  &__info {
+    &-title {
+      .oswaldFont(@lh: 115%, @color: #061b28, @fw: 500, @fz: 52px);
+      padding-bottom: 50px;
+      width: 472px;
+    }
+
+    &-text {
+      .robotoFont(@lh: 150%, @color: #061b28, @fw: normal, @fz: 18px);
+      max-width: 350px;
+      padding-right: 120px;
+    }
+  }
+}
+
+.popular {
+  &-title {
+    text-align: center;
+    padding-bottom: 80px;
+  }
+
+  &-items {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-item {
+    background-size: cover;
+    border: 1px solid black;
+    width: 370px;
+    height: 326px;
+    // opacity: 0.7;
+
+    &__header {
+      .robotoFont(@lh: 115%, @color: #061b28, @fw: normal, @fz: 16px);
+      margin-left: 40px;
+      padding-top: 42px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-town {
+        padding-left: 20px;
+        position: relative;
+      }
+
+      &-town::before {
+        content: "";
+        position: absolute;
+        background: url("../assets/check.png") 50% 50% no-repeat;
+        width: 13px;
+        height: 16px;
+        top: 0;
+        left: 0;
+      }
+
+      &-favorite {
+        margin-right: 40px;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: rgba(252, 252, 252, 0.4) url("../assets/favorite.png")
+          center no-repeat;
+      }
+    }
+  }
+
+  &-item__main {
+    margin-left: 40px;
+    &-title {
+      .oswaldFont(@lh: 115%, @color: #173547, @fw: 500, @fz: 26px);
+      margin-top: 113px;
+    }
+    &-info {
+      margin-top: 25px;
+      margin-bottom: 24px;
+      .robotoFont(@lh: 115%, @color: #061b28, @fw: normal, @fz: 18px);
+    }
+
+    &-level {
+      .robotoFont(@lh: 115%, @color: #061b28, @fw: normal, @fz: 18px);
+      padding-left: 20px;
+      position: relative;
+    }
+    &-level:first-child:before {
+      content: "";
+      position: absolute;
+      background: url("../assets/loader0.png") 50% 50% no-repeat;
+      width: 14px;
+      height: 14px;
+      top: 2.5px;
+      left: 0;
+      //   transform: translateY(50%);
+    }
+  }
+}
+
+.wrp {
+  background: rgba(255, 255, 255, 0.6);
+  height: 328px;
+}
+
+// .robotoFont(@lh, @color, @fw, @fz) {
+// 	font-family: "Roboto", sans-serif;
+// 	line-height: @lh;
+// 	color: @color;
+// 	font-weight: @fw;
+// 	font-size: @fz;
+//   }
